@@ -29,7 +29,7 @@ public class HomeWorkApp {
     }
 
     public static void printColor() {
-        int base = 100;
+        int base = 1000;
         int value = (int) ((Math.random() - 0.5) * 2 * base);
 
         if (value <= 0) {
