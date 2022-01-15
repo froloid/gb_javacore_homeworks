@@ -1,57 +1,55 @@
 public class HomeWorkApp {
     public static void main(String[] args) {
+        printThreeWords();
+        checkSumSign();
+        printColor();
+        compareNumbers();
+    }
 
-        int testNumber1 = (int) ((Math.random() - 0.5) * 2 * 100);
-        int testNumber2 = (int) ((Math.random() - 0.5) * 2 * 100);
-        int logCount = (int) (Math.random() * 10) + 1;
+    public static void printThreeWords() {
+        System.out.println("Orange\nBanana\nApple");
+    }
 
-        String yesNoText = checkSumInterval(testNumber1, testNumber2) ? "" : "does not";
-        System.out.printf("sum of %d and %d %s belongs to the interval [%d, %d]\n", testNumber1, testNumber2, yesNoText, 10, 20);
-        logSignNumber(testNumber1);
-        multipleLogInfo("some information", logCount);
-        
-        int[] testYears = {300, 400, 47, 48};
+    public static void checkSumSign() {
+        int base = 100;
+        int a = (int) ((Math.random() - 0.5) * 2 * base);
+        int b = (int) ((Math.random() - 0.5) * 2 * base);
 
-        System.out.println("test leap func:");
+        int sum = a + b;
 
-        for (int year : testYears) {
-            System.out.printf("    test year %d: result - the year is %sleap\n", year, isLeapYear(year) ? "" : "not ");
+        String message = "Сумма ";
+
+        if (sum >= 0) {
+            message += "положительная";
+        } else {
+            message += "отрицательная";
+        }
+
+        System.out.println(message);
+    }
+
+    public static void printColor() {
+        int base = 1000;
+        int value = (int) ((Math.random() - 0.5) * 2 * base);
+
+        if (value <= 0) {
+            System.out.println("Красный");
+        } else if (value <= 100) {
+            System.out.println("Желтый");
+        } else {
+            System.out.println("Зеленый");
         }
     }
 
-    public static boolean checkSumInterval(int number1, int number2, int leftBoundary, int rightBoundary) {
-        int sum = number1 + number2;
+    public static void compareNumbers() {
+        int base = 100;
+        int a = (int) ((Math.random() - 0.5) * 2 * base);
+        int b = (int) ((Math.random() - 0.5) * 2 * base);
 
-        return sum >= leftBoundary & sum <= rightBoundary;
-    }
-
-    public static boolean checkSumInterval(int number1, int number2) {
-        return checkSumInterval(number1, number2, 10, 20);
-    }
-
-    public static void logSignNumber(int number) {
-        String result = "negative";
-
-        if (checkSignNumber(number)) {
-            result = "positive";
+        if (a >= b) {
+            System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
         }
-
-        System.out.printf("the number %s is %s\n", number, result);
-    }
-
-    public static boolean checkSignNumber(int number) {
-
-        return number >= 0;
-    }
-
-    public static void multipleLogInfo(String textInfo, int logCount) {
-        for (int i = 0; i < logCount; i++) {
-            System.out.println(textInfo);
-
-        }
-    }
-
-    public static boolean isLeapYear(int year) {
-        return year % 400 == 0 || year % 100 != 0 & year % 4 == 0;
     }
 }
