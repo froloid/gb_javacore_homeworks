@@ -1,4 +1,4 @@
-package core1_lesson_01;
+package core2Lesson01;
 
 public interface Runable {
     public float run();

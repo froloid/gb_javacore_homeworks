@@ -1,6 +1,4 @@
-package core1_lesson_01;
-
-import jdk.jfr.Frequency;
+package core2Lesson01;
 
 public class Wall {
     private float height;

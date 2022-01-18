@@ -13,7 +13,7 @@ public class HomeWorkApp {
     public static void checkSumSign() {
         int base = 100;
         int a = (int) ((Math.random() - 0.5) * 2 * base);
-        int b = (int) ((Math.random() - 0.5) * 2 * bas
+        int b = (int) ((Math.random() - 0.5) * 2 * base);
         int sum = a + b;
 
         String message = "Сумма ";

@@ -1,7 +1,4 @@
-package core1_lesson_01;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+package core2Lesson01;
 
 public class testCompetition {
 

@@ -1,9 +1,9 @@
-package core1_lesson_01;
+package core2Lesson01;
 
 public class Robot implements Runable, Jumpable {
-    float jumpRate;
-    float runRate;
-    int variationRate;
+    private float jumpRate;
+    private float runRate;
+    private int variationRate;
 
     public Robot(float baseRateRun, float baseRateJump, int variation) {
         this.variationRate = variation;

@@ -1,11 +1,11 @@
-package core1_lesson_01;
+package core2Lesson01;
 
 public class Track {
     private float length;
 
-    Track(float base_length) {
+    Track(float baseLength) {
         int variation = 25;
-        this.length = base_length + base_length * ((float) Math.random() - 0.5F) * 2 * variation / 100;
+        this.length = baseLength + baseLength * ((float) Math.random() - 0.5F) * 2 * variation / 100;
     }
 
     public float getLength() {

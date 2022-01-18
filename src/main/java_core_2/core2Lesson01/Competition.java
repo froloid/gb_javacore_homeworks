@@ -1,14 +1,14 @@
-package core1_lesson_01;
+package core2Lesson01;
 
 import java.util.ArrayList;
 
 public class Competition {
 
-    int obstaclesCount;
-    float runBase;
-    float jumpBase;
-    int variationRate;
-    ArrayList<Object> track;
+    private int obstaclesCount;
+    private float runBase;
+    private float jumpBase;
+    private int variationRate;
+    private ArrayList<Object> track;
 
     Competition(int obstaclesCount, float runBase, float jumpBase, int variationRate) {
         this.obstaclesCount = obstaclesCount;
