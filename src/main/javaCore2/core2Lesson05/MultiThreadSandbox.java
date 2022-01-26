@@ -4,11 +4,9 @@ import java.util.Arrays;
 
 public class MultiThreadSandbox {
 
-    //public static float[] arr;
-
     public static void singleThreadHandle() {
-        final int size = (int) Math.pow(10, 7);
-        final int h = size / 2;
+        int size = (int) Math.pow(10, 7);
+        int h = size / 2;
         float[] arr = new float[size];
         Arrays.fill(arr, 1f);
 
@@ -24,19 +22,16 @@ public class MultiThreadSandbox {
     }
 
     public static void doubleThreadHandle() {
-        final int size = (int) Math.pow(10, 7);
-        final int h = size / 2;
+        int size = (int) Math.pow(10, 7);
+        int h = size / 2;
         float[] arr = new float[size];
         Arrays.fill(arr, 1f);
 
         long a = System.currentTimeMillis();
 
-        float[] arrHead = new float[h];
-        System.arraycopy(arr, 0, arrHead, 0, h);
+        var arrHead = new float[h];
+        var arrTail = new float[h];
 
-        float[] arrTail = new float[h];
-        System.arraycopy(arr, 0, arrTail, h, arr.length);
-        
         Thread t1 = new Thread(new HandlingArray(arrHead));
         Thread t2 = new Thread(new HandlingArray(arrTail));
 
@@ -50,19 +45,19 @@ public class MultiThreadSandbox {
             System.exit(0);
         }
 
-        System.arraycopy(arr, 0, arrHead, 0, h);
-        System.arraycopy(arr, h, arrTail, h, h);
+        System.arraycopy(arrHead, 0, arr, 0, h);
+        System.arraycopy(arrTail, 0, arr, h, h);
 
         long b = System.currentTimeMillis();
 
-        System.out.printf("singleThreadHandle метод обработал массив за %d миллисекунд\n", b - a);
+        System.out.printf("doubleThreadHandle метод обработал массив за %d миллисекунд\n", b - a);
 
         System.out.println("Элементов в массиве: " + arr.length);
 
     }
 
-    public static void main(String... args) {
-        //singleThreadHandle();
+    public static void main(String[] args) {
+        singleThreadHandle();
         doubleThreadHandle();
     }
 }
