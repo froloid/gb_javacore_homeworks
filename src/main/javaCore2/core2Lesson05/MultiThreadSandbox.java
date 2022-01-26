@@ -30,7 +30,9 @@ public class MultiThreadSandbox {
         long a = System.currentTimeMillis();
 
         var arrHead = new float[h];
+        System.arraycopy(arr, 0, arrHead, 0, h);
         var arrTail = new float[h];
+        System.arraycopy(arr, h, arrTail, 0, h);
 
         Thread t1 = new Thread(new HandlingArray(arrHead));
         Thread t2 = new Thread(new HandlingArray(arrTail));
